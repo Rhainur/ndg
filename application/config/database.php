@@ -61,23 +61,23 @@ return array(
 
 	'connections' => array(
 
-		'sqlite' => array(
+		/*'sqlite' => array(
 			'driver'   => 'sqlite',
 			'database' => 'application',
 			'prefix'   => '',
-		),
+		),*/
 
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'localhost',
 			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
+			'username' => 'ndg',
+			'password' => 'mbCCMw2xdxmtAC9z',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),
 
-		'pgsql' => array(
+		/*'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
 			'database' => 'database',
@@ -95,7 +95,7 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'prefix'   => '',
-		),
+		),*/
 
 	),
 
