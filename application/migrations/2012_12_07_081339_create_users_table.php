@@ -17,10 +17,10 @@ class Create_Users_Table {
 			$table->string('email', 255);
 			$table->string('password', 255);
 
-			$table->integer('role');
+			$table->integer('role')->unsigned();
 
-			$table->boolean('activated');
-			$table->boolean('active');
+			$table->boolean('activated')->default(0);
+			$table->boolean('active')->default(0);
 
 			$table->timestamps();
 

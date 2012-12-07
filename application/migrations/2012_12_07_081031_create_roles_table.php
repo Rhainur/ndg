@@ -10,10 +10,11 @@ class Create_Roles_Table {
 	public function up()
 	{
 		Schema::create('roles', function($table) {
-			// auto incremental id (PK)
+
 			$table->increments('id');
-			// varchar 32
 			$table->string('name', 32);
+			$table->timestamps();
+
 		});
 	}
 
