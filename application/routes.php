@@ -34,7 +34,7 @@
 
 Route::get('/', function()
 {
-	return View::make('home');
+	return View::make('home')->with('page_title', 'Home');
 });
 
 Route::get('login', function()
