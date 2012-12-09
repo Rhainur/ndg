@@ -18,6 +18,12 @@ class User_Task{
 		$user->save();
 
 	}
+
+	public function profile($args){
+		$prof = new User_Profile;
+		$prof->user_id = 1;
+		$prof->save();
+	}
 }
 
 ?>

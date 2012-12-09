@@ -39,7 +39,7 @@ Route::get('/', function()
 
 Route::get('login', function()
 {
-	return View::make('login');
+	return Redirect::to('/');
 });
 
 Route::post('login', function()
@@ -60,6 +60,8 @@ Route::get('logout', function() {
 	Auth::logout();
 	return Redirect::to('login');
 });
+
+Route::controller('profile');
 
 /*
 |--------------------------------------------------------------------------
