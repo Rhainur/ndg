@@ -4,7 +4,6 @@
 	<title>90 Days Goal @if (isset($page_title)) - {{ $page_title }} @endif</title>
 	<link rel="stylesheet" href="/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/css/bootstrap-responsive.min.css" />
-	<script src="/js/bootstrap.min.js"></script>
 	<style>
 
     body{
@@ -50,5 +49,9 @@
 			</p>
 		</div>
 	</footer>
+
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
