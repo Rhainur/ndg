@@ -29,6 +29,11 @@
 						<a class="btn btn-inverse" href="{{ URL::to('/profile') }}">
 							<i class="icon-user icon-white"></i> {{ Auth::user()->username }}
 						</a>
+						@if (Auth::user()->role == 1)
+						<a class="btn btn-inverse" href="{{ URL::to('/admin') }}">
+							<i class="icon-cog icon-white"></i> Admin Panel
+						</a>
+						@endif
 						<a class="btn btn-inverse" href="{{ URL::to('/logout') }}">
 							<i class="icon-off icon-white"></i> Logout
 						</a>

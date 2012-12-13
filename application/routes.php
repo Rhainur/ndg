@@ -62,6 +62,7 @@ Route::get('logout', function() {
 });
 
 Route::controller('profile');
+Route::controller('admin');
 
 /*
 |--------------------------------------------------------------------------
@@ -134,4 +135,9 @@ Route::filter('csrf', function()
 Route::filter('auth', function()
 {
 	if (Auth::guest()) return Redirect::to('login');
+});
+
+Route::filter('admin', function(){
+	if( Auth::user()->role != 1 )
+		return Redirect::to('/');
 });

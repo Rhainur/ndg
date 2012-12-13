@@ -19,6 +19,7 @@ user_profiles:
 
 challenges:
 	id
+	title
 	start_date
 	end_date
 
