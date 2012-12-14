@@ -1,6 +1,6 @@
 <?php
 
-class Create_Exercise_Choices_Table {
+class Create_exercise_choices_Table {
 
 	/**
 	 * Make changes to the database.
@@ -9,7 +9,7 @@ class Create_Exercise_Choices_Table {
 	 */
 	public function up()
 	{
-		Schema::create('exercise_choices', function($table) {
+		Schema::create('exercise_types', function($table) {
 			$table->increments('id');
 
 			$table->string('name', 128);
@@ -25,7 +25,7 @@ class Create_Exercise_Choices_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('exercise_choices');
+		Schema::drop('exercise_types');
 	}
 
 }

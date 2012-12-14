@@ -60,6 +60,9 @@ Laravel\Autoloader::$aliases = $aliases;
 
 Autoloader::map(array(
 	'Base_Controller' => path('app').'controllers/base.php',
+	'User_Profile'    => path('app').'models/user_profile.php',
+	'Exercise_Type'    => path('app').'models/Exercise_Type.php',
+	'Fitness_Tracker'    => path('app').'models/Fitness_Tracker.php',
 ));
 
 /*

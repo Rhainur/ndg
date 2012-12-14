@@ -1,6 +1,6 @@
 <?php
 
-class Create_Tracker_Choices_Table {
+class Create_tracker_choices_Table {
 
 	/**
 	 * Make changes to the database.
@@ -9,7 +9,7 @@ class Create_Tracker_Choices_Table {
 	 */
 	public function up()
 	{
-		Schema::create('tracker_choices', function($table) {
+		Schema::create('fitness_trackers', function($table) {
 			$table->increments('id');
 
 			$table->string('name', 128);
@@ -25,7 +25,7 @@ class Create_Tracker_Choices_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('tracker_choices');
+		Schema::drop('fitness_trackers');
 	}
 
 }
