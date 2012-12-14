@@ -21,7 +21,7 @@
 			@else
 				<ul class="unstyled">
 				@foreach( $active_challenges as $challenge )
-					<li>{{ $challenge->name }} - <a href="{{ URL::to('/challenge/signup/' . $challenge->id) }}">Sign up</a></li>
+					<li>{{ HTML::link('/challenge/view/' . $challenge->id, $challenge->name ) }} <a href="{{ URL::to('/challenge/signup/' . $challenge->id) }}" class="pull-right">Sign up</a></li>
 				@endforeach
 				</ul>
 			@endif

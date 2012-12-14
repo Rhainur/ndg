@@ -27,7 +27,12 @@ entries
 	id
 	user_id
 	challenge_id
-	check_in (weekly/monthly/final)
+	weight
+	goals
+	diet
+	exercise
+	tracker
+	check_in_reminder_preference (weekly/monthly/final)
 
 checkins
 	id
