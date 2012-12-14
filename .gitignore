@@ -7,6 +7,8 @@
 *.swo
 *.swp
 *.vi
+*.sublime-workspace
+*.sublime-project
 *~
 *.sass-cache
 
