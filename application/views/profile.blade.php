@@ -39,6 +39,19 @@
 	</div>
 	@endif
 
+
+	<div class="control-group">
+		{{ Form::label('sex', 'Sex', array('class'=>'control-label'))}}
+		<div class="controls">
+			<p>
+				{{ Form::radio('sex', '0', ($user_profile->sex==0)) }} Female
+			</p>
+			<p>
+				{{ Form::radio('sex', '1', ($user_profile->sex==1)) }} Male
+			</p>
+		</div>
+	</div>
+
 	<div class="control-group{{ ($errors->has('dob'))?' error':'' }}">
 		<label class="control-label">Date of Birth</label>
 		<div class="controls">

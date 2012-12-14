@@ -20,6 +20,7 @@ class User_Profile extends Eloquent{
 
 	public function update_profile($new){
 		$this->use_metric_units = $new['use_metric_units'];
+		$this->sex = $new['sex'];
 		$this->height = Converter::height($new['height'], $this->use_metric_units, 1);
 		$this->date_of_birth = $new['dob'];
 		$this->save();

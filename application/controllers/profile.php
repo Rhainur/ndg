@@ -45,6 +45,7 @@ class Profile_Controller extends Base_Controller {
 		$rules = array(
 			'height' => 'numeric',
 			'use_metric_units' => 'integer|min:0|max:1',
+			'sex' => 'integer|min:0|max:1',
 			'dob' => 'valid_date',
 			'current_password' => 'required_with:new_password|password_verification',
 			'new_password' => 'different:current_password|confirmed'

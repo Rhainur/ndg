@@ -3,7 +3,7 @@
 /*
 |--------------------------------------------------------------------------
 | Application Routes
-|--------------------------------------------------------------------------
+|---------	-----------------------------------------------------------------
 |
 | Simply tell Laravel the HTTP verbs and URIs it should respond to. It is a
 | breeze to setup your application using Laravel's RESTful routing and it
@@ -34,7 +34,14 @@
 
 Route::get('/', function()
 {
-	return View::make('home')->with('page_title', 'Home');
+	if( Auth::guest() ){
+		return View::make('public')
+		->with('page_title', 'Home');
+	}else{
+		return View::make('home')
+		->with('page_title', 'Home')
+		->with('active_challenges', Challenge::get_active_challenges());
+	}
 });
 
 Route::get('login', function()
