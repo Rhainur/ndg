@@ -23,19 +23,19 @@
 
 			<h3>Create a new challenge</h3>
 				<div class="control-group">
-					{{ Form::label('name', 'Name', array('class'=>'control-label'))}}
+					{{ Form::label('name', 'Name', array('class'=>'control-label') ) }}
 					<div class="controls">
 						<p>
-							{{ Form::text('name') }}
+							{{ Form::text('name', '', array('required' => 'required')) }}
 						</p>
 					</div>
 				</div>
 
 				<div class="control-group">
-					{{ Form::label('start_date', 'Start Date', array('class'=>'control-label'))}}
+					{{ Form::label('start_date', 'Start Date', array('class'=>'control-label' ))}}
 					<div class="controls">
 						<p>
-							{{ Form::text('start_date') }}
+							{{ Form::text('start_date', '', array('class'=>'datepicker', 'data-date-format' => 'yyyy-mm-dd', 'required' => 'required')) }}
 						</p>
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 					{{ Form::label('end_date', 'End Date', array('class'=>'control-label'))}}
 					<div class="controls">
 						<p>
-							{{ Form::text('end_date') }}
+							{{ Form::text('end_date', '', array('class'=>'datepicker', 'data-date-format' => 'yyyy-mm-dd','required' => 'required')) }}
 						</p>
 					</div>
 				</div>
