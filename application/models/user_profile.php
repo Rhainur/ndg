@@ -26,6 +26,14 @@ class User_Profile extends Eloquent{
 		$this->save();
 	}
 
+	public function units_height(){
+		return($this->use_metric_units?'cm':'in');
+	}
+
+	public function units_weight(){
+		return($this->use_metric_units?'kg':'lb');
+	}
+
 }
 
 ?>

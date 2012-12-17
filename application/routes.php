@@ -68,8 +68,9 @@ Route::get('logout', function() {
 	return Redirect::to('login');
 });
 
-Route::controller('profile');
 Route::controller('admin');
+Route::controller('challenge');
+Route::controller('profile');
 
 /*
 |--------------------------------------------------------------------------
