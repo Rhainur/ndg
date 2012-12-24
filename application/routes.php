@@ -40,7 +40,8 @@ Route::get('/', function()
 	}else{
 		return View::make('home')
 		->with('page_title', 'Home')
-		->with('active_challenges', Challenge::get_active_challenges());
+		->with('active_challenges', Challenge::get_active_challenges())
+		->with('user_entries', Entry::with('challenge')->where('user_id', '=', Auth::user()->id)->get());
 	}
 });
 
@@ -71,6 +72,7 @@ Route::get('logout', function() {
 Route::controller('admin');
 Route::controller('challenge');
 Route::controller('profile');
+Route::controller('entry');
 
 /*
 |--------------------------------------------------------------------------

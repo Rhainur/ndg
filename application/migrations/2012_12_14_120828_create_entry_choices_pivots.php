@@ -17,6 +17,8 @@ class Create_Entry_Choices_Pivots {
 
 			$table->foreign('entry_id')->references('id')->on('entries');
 			$table->foreign('goal_id')->references('id')->on('goals');
+
+			$table->timestamps();
 		});
 
 		Schema::create('diet_entry', function($table){
@@ -27,6 +29,8 @@ class Create_Entry_Choices_Pivots {
 
 			$table->foreign('entry_id')->references('id')->on('entries');
 			$table->foreign('diet_id')->references('id')->on('diets');
+
+			$table->timestamps();
 		});
 
 		Schema::create('entry_exercise_type', function($table){
@@ -37,6 +41,8 @@ class Create_Entry_Choices_Pivots {
 
 			$table->foreign('entry_id')->references('id')->on('entries');
 			$table->foreign('exercise_type_id')->references('id')->on('exercise_types');
+
+			$table->timestamps();
 		});
 
 		Schema::create('entry_fitness_tracker', function($table){
@@ -47,6 +53,8 @@ class Create_Entry_Choices_Pivots {
 
 			$table->foreign('entry_id')->references('id')->on('entries');
 			$table->foreign('fitness_tracker_id')->references('id')->on('fitness_trackers');
+
+			$table->timestamps();
 		});
 	}
 

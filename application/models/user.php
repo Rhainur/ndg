@@ -10,6 +10,10 @@ class User extends Eloquent{
 		$this->password = Hash::make($new_password);
 		$this->save();
 	}
+
+	public function entries(){
+		return $this->has_many('Entry');
+	}
 }
 
 ?>

@@ -23,4 +23,22 @@ class Challenge_Controller extends Base_Controller {
 		}
 	}
 
+	public function action_form_signup(){
+		$rules = array(
+			'weight' => 'required|numeric',
+		);
+
+		$validation = Validator::make(Input::all(), $rules);
+
+		if( $validation->fails() ){
+			return Redirect::to('/challenge/signup/' . Input::get('challenge_id'))->with_errors($validation)->with_input();
+		}else{
+			if( Challenge::signup(Input::all()) ){
+				return Redirect::to('/');
+			}else{
+				return Redirect::to('/')->with('error_message', 'Signup failed');
+			}
+		}
+	}
+
 }

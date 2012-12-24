@@ -7,6 +7,8 @@
 <br /><br />
 {{ Form::open('/challenge/form_signup', 'POST', array('class'=>'form-horizontal')) }}
 
+	{{ Form::hidden('challenge_id', $challenge->id) }}
+
 	<div class="control-group">
 		{{ Form::label('username', 'Username', array('class'=>'control-label'))}}
 		<div class="controls">
@@ -16,11 +18,12 @@
 		</div>
 	</div>
 
-	<div class="control-group">
+	<div class="control-group{{ ($errors->has('weight'))?' error':'' }}">
 		{{ Form::label('weight', 'Weight', array('class'=>'control-label'))}}
 		<div class="controls">
 			<p>
-				{{ Form::text('weight', '', array('class'=>'input-mini')) . ' ' . Auth::user()->profile->units_weight() }}
+				{{ Form::text('weight', Input::old('weight'), array('class'=>'input-mini')) . ' ' . Auth::user()->profile->units_weight() }}
+				{{ $errors->first('weight', '<span class="help-inline">:message</span>') }}
 			</p>
 		</div>
 	</div>
@@ -29,9 +32,10 @@
 		{{ Form::label('goals', 'Goal(s)', array('class'=>'control-label'))}}
 		<div class="controls">
 			<div>
+				<?php $old_input = Input::old('goals', array()); ?>
 				@foreach($goals as $goal)
 				<label class="checkbox">
-				{{ Form::checkbox('goals[]', $goal->id) . ' ' . $goal->name }}
+				{{ Form::checkbox('goals['.$goal->id.']', true, isset($old_input[$goal->id])) . ' ' . $goal->name }}
 				</label>
 				@endforeach
 			</div>
@@ -44,9 +48,10 @@
 		{{ Form::label('diets', 'Diet(s)', array('class'=>'control-label'))}}
 		<div class="controls">
 			<div>
+				<?php $old_input = Input::old('diets', array()); ?>
 				@foreach($diets as $diet)
 				<label class="checkbox">
-				{{ Form::checkbox('diets[]', $diet->id) . ' ' . $diet->name }}
+				{{ Form::checkbox('diets['.$diet->id.']', true, isset($old_input[$diet->id])) . ' ' . $diet->name }}
 				</label>
 				@endforeach
 			</div>
@@ -57,9 +62,10 @@
 		{{ Form::label('exercise_types', 'Exercise(s)', array('class'=>'control-label'))}}
 		<div class="controls">
 			<div>
-				@foreach($exercise_types as $exercise_type)
+				<?php $old_input = Input::old('exercise_types', array()); ?>
+				@foreach($exercise_types as $ex)
 				<label class="checkbox">
-				{{ Form::checkbox('exercise_types[]', $exercise_type->id) . ' ' . $exercise_type->name }}
+				{{ Form::checkbox('exercise_types['.$ex->id.']', $ex->id, isset($old_input[$ex->id])) . ' ' . $ex->name }}
 				</label>
 				@endforeach
 			</div>
@@ -70,9 +76,10 @@
 		{{ Form::label('fitness_trackers', 'Fitness Tracker(s)', array('class'=>'control-label'))}}
 		<div class="controls">
 			<div>
-				@foreach($fitness_trackers as $fitness_tracker)
+				<?php $old_input = Input::old('fitness_trackers', array()); ?>
+				@foreach($fitness_trackers as $ft)
 				<label class="checkbox">
-				{{ Form::checkbox('fitness_trackers[]', $fitness_tracker->id) . ' ' . $fitness_tracker->name }}
+				{{ Form::checkbox('fitness_trackers['.$ft->id.']', $ft->id, isset($old_input[$ft->id])) . ' ' . $ft->name }}
 				</label>
 				@endforeach
 			</div>
@@ -84,13 +91,13 @@
 		<div class="controls">
 			<div>
 				<label class="radio">
-				{{ Form::radio('email_reminder', -1) . ' Never' }}
+				{{ Form::radio('email_reminder', -1, Input::old('email_reminder', -1) == -1) . ' Never' }}
 				</label>
 				<label class="radio">
-				{{ Form::radio('email_reminder', 7) . ' Weekly' }}
+				{{ Form::radio('email_reminder', 7, Input::old('email_reminder', -1) == 7) . ' Weekly' }}
 				</label>
 				<label class="radio">
-				{{ Form::radio('email_reminder', 28) . ' Monthly' }}
+				{{ Form::radio('email_reminder', 30, Input::old('email_reminder', -1) == 30) . ' Monthly' }}
 				</label>
 			</div>
 		</div>
