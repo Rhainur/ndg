@@ -41,7 +41,10 @@ checkins
 	body_fat_percentage
 	waist
 	hip
+	chest
 	neck
+	thigh
+	arm
 	comments
 	flag_latest
 

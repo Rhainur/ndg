@@ -5,13 +5,15 @@
 	<link rel="stylesheet" href="/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="/css/bootstrap-responsive.min.css" />
 	<link rel="stylesheet" href="/css/bootstrap-datepicker.css" />
-	<style>
-
-    body{
-    	padding-top: 60px;
-    }
-
-    </style>
+	<link rel="stylesheet" href="/css/style.css" />
+	@if( !Auth::guest() )
+	<script>
+	var userUnits = {
+		weight: '{{ Auth::user()->profile->units_weight() }}',
+		height: '{{ Auth::user()->profile->units_height() }}'
+	};
+	</script>
+	@endif;
 </head>
 <body>
 
@@ -60,6 +62,7 @@
 	<script src="/js/jquery.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/bootstrap-datepicker.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	<script src="/js/script.js"></script>
 </body>
 </html>
